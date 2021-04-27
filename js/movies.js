@@ -7,7 +7,6 @@ $(document).ready(function () {
     let response = null;
     let btnSearch = document.getElementById('btnSearch');
     let txtSearch = document.getElementById('txtSearch');
-    let modal = $('#modalSearch').modal();
     let to3 = true;
 
 
