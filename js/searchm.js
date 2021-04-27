@@ -16,6 +16,7 @@ $(document).ready(function () {
         return false;
     });
     noData();
+
     function handleResponse(response) {
         response.forEach(review => {
             if (noSlider > 0 && to3) {
@@ -35,6 +36,7 @@ $(document).ready(function () {
             }
         });
     }
+
     function createCard(review) {
         let img = document.createElement("img");
         img.src = review.multimedia.src;
@@ -65,6 +67,7 @@ $(document).ready(function () {
 
         return dv1;
     }
+
     function createSliderItem(review) {
         let img = document.createElement("img");
         let dvI = document.createElement("div");
@@ -97,6 +100,9 @@ $(document).ready(function () {
             } else {
                 window.location.href = "search.html";
             }
+        }
+        xmlSearchRequest.onerror = function (){
+            window.location.href="search.html?error=true";
         }
     }
 
