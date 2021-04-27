@@ -33,6 +33,7 @@ $(document).ready(function () {
         searchCriteria(srcWord);
         return false;
     });
+
     function handleResponse(response) {
         response.forEach(review => {
             if (noSlider > 0 && to3) {
@@ -52,6 +53,7 @@ $(document).ready(function () {
             }
         });
     }
+
     function createCard(review) {
         let img = document.createElement("img");
         img.src = review.multimedia.src;
@@ -82,6 +84,7 @@ $(document).ready(function () {
 
         return dv1;
     }
+    
     function createSliderItem(review) {
         let ap = document.createElement("p");
         let aImg = document.createElement("a");
