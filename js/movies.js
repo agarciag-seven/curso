@@ -26,7 +26,7 @@ $(document).ready(function () {
             window.location.href="search.html";
     }
     xmlRequest.onerror = function () {
-        window.location.href="search.html";
+        window.location.href="search.html?error=true";
     };
     btnSearch.addEventListener('click', e => {
         e.preventDefault();

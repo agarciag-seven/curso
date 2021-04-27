@@ -15,7 +15,7 @@ $(document).ready(function () {
         searchCriteria(srcWord);
         return false;
     });
-
+    noData();
     function handleResponse(response) {
         response.forEach(review => {
             if (noSlider > 0 && to3) {
@@ -97,6 +97,14 @@ $(document).ready(function () {
             } else {
                 window.location.href = "search.html";
             }
+        }
+    }
+
+    function noData(){
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        if(urlParams.get('error')){
+            $('.alert').html('Por el momento el sitio no esta disponible intentelo mas tarde..!!');
         }
     }
 });
