@@ -20,10 +20,13 @@ $(document).ready(function () {
     xmlRequest.send();
     xmlRequest.onload = function () {
         response = xmlRequest.response;
-        handleResponse(response.results);
+        if(response.num_results>0)
+            handleResponse(response.results);
+        else
+            window.location.href="search.html";
     }
     xmlRequest.onerror = function () {
-        //hacer algo para cuando no se tenga servicio
+        window.location.href="search.html";
     };
     btnSearch.addEventListener('click', e => {
         e.preventDefault();
